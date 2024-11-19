@@ -1,0 +1,14 @@
+{
+  "title": "読み物",
+  "closed": false,
+  "archived": true,
+  "created_at": "2023-03-28",
+  "comments": [
+    {
+      "author": "taroro28",
+      "created_at": "2023-03-28",
+      "body_markdown": "- [ ] https://nextjs.org\n- [ ] https://remix.run\n- [x] https://reactrouter.com\n- [ ] https://tailwindcss.com\n- [ ] https://mantine.dev\n- [ ] https://github.com/unocss/unocss\n- [ ] https://tanstack.com/query\n- [ ] https://graphql.org\n- [ ] https://deno.land\n- [ ] https://pnpm.io\n- [ ] https://storybook.js.org",
+      "body_updated_at": "2023-04-03"
+    }
+  ]
+}

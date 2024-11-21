@@ -218,13 +218,13 @@ https://github.com/TanStack/table/blob/main/packages/table-core/src/features/Row
 
 [URLパラメータに同期する仕組み](#URLパラメータに同期する仕組み)で紹介したように、tanstack-table-search-paramsはURLパラメータのReact stateをTanStack Tableのstateに変換しているだけなので、ReactのstateでURLパラメータを取得できるrouterであれば（たぶん）使用できます。
 
-以下の3つは、examplesを用意しているのでよかったらご覧ください。
+以下の3つは、exampleを用意しているのでよかったらご覧ください。
 
 - [Next.js(Pages Router)](https://github.com/taro-28/tanstack-table-search-params/tree/main/examples/next-pages-router)
 - [Next.js(App Router)](https://github.com/taro-28/tanstack-table-search-params/tree/main/examples/next-app-router)
 - [TanStack Router](https://github.com/taro-28/tanstack-table-search-params/tree/main/examples/tanstack-router)
 
-# カスタマイズ性
+# その他設定できること
 
 tanstack-table-search-paramsでは、URLパラメータ名やエンコード形式などをカスタマイズできます。
 
@@ -360,7 +360,7 @@ const stateAndOnChanges = useTableSearchParams(router, {
 元々は仕事でTanStack Tableを使っていて、楽にURLパラメータへの同期したかったのがきっかけで作りました。
 （仕事でも使い始めていて、[サービスのお知らせページでも少し紹介](https://about.basemachina.com/news/feature-update-20241111#index_cXalpYnF)しています）
 
-現状自分が欲しい機能は一通り揃ったので、あとは対応しているTanStack Tableのstateを増やしたりカスタマイズ性を高めたりして完成度を高めていきたいです。
+現状自分が欲しい機能は一通り揃ったので、あとは対応しているTanStack Tableのstateやカスタマイズできる点を増やして、完成度を高めていきたいです。
 
 ちなみにプライベートで自分の作ったpackageをnpmに公開したのが初めてで、npmのpublishの方法や[tsup](https://tsup.egoist.dev/)の便利さなどを知れたのもよかったです。
 

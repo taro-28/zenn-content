@@ -321,7 +321,7 @@ const stateAndOnChanges = useTableSearchParams(router, {
 });
 ```
 
-## default value
+## デフォルト値
 
 URLパラメータが存在しない場合のデフォルトのTanStack Tableのstateの値を指定できます。
 

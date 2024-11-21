@@ -172,7 +172,7 @@ export default function UserTable() {
     // ...
 ```
 
-ここで`useReactTable`に`state.globalFilter`と`onGlobalFilterChange`を渡しているのは、TanStack Tableのstateを管理する場合の設定方法です。
+ここで`useReactTable`に`state.globalFilter`と`onGlobalFilterChange`を渡しているのは、TanStack Tableのstateを`useReactTable`の外部で管理する場合の設定方法です。
 
 https://tanstack.com/table/latest/docs/guide/global-filtering#global-filter-state
 

@@ -15,6 +15,8 @@ published: false
 
 今回は、ReactでTanStack Tableを使用する際に検索やソートなどの状態をURLパラメータに同期できる[tanstack-table-search-params](https://github.com/taro-28/tanstack-table-search-params)というライブラリを作ったのでその紹介です。
 
+https://x.com/taroro_tarotaro/status/1814550036392653023
+
 # TanStack Table
 
 まずReactでのTanStack Tableの使い方を簡単に紹介します。
@@ -150,7 +152,7 @@ export default function UserTable() {
 
 # URLパラメータに同期する仕組み
 
-tanstack-table-search-paramsでTanStack TableのstateをURLパラメータに同期する仕組みを紹介するために、上のコードで`router`や`stateAndOnChanges`のオブジェクトを丸ごと受け渡ししている部分を、必要なプロパティを明示した形式に変更します。
+tanstack-table-search-paramsでTanStack TableのstateをURLパラメータに同期する仕組みを紹介するために、上のコードで`router`や`stateAndOnChanges`のオブジェクトを丸ごと受け渡す部分を、必要なプロパティに絞った形式に変更します。
 
 ```tsx
 export default function UserTable() {
@@ -203,7 +205,7 @@ https://github.com/TanStack/table/blob/main/packages/table-core/src/features/Row
 
 # 対応しているTanStack Tableのstate
 
-現在(2024/11/20)は、以下の4つのTanStack Tableのstateに対応していますが、今後も増やしていく予定です。
+現在(2024/11/20時点)は、以下の4つのTanStack Tableのstateに対応していますが、今後も増やしていく予定です。
 
 - globalFilter: 行全体の検索
 - sorting: ソート
@@ -212,7 +214,7 @@ https://github.com/TanStack/table/blob/main/packages/table-core/src/features/Row
 
 # 使用できるrouter
 
-[URLパラメータに同期する仕組み](#URLパラメータに同期する仕組み)で紹介したように、tanstack-table-search-paramsはURLパラメータのReact stateをTanStack Tableのstateに変換してるだけなので、ReactのstateでURLパラメータを取得できるrouterであれば（たぶん）使用できます。
+[URLパラメータに同期する仕組み](#URLパラメータに同期する仕組み)で紹介したように、tanstack-table-search-paramsはURLパラメータのReact stateをTanStack Tableのstateに変換しているだけなので、ReactのstateでURLパラメータを取得できるrouterであれば（たぶん）使用できます。
 
 以下の3つは、examplesディレクトリを用意しているのでよかったらご覧ください。
 
@@ -239,7 +241,7 @@ const stateAndOnChanges = useTableSearchParams(router, {
 });
 ```
 
-もしprefixやsuffixをつけたい場合は、関数を渡すこともできます。
+もしprefixやsuffixを追加する場合は、関数を渡すこともできます。
 
 ```tsx
 const stateAndOnChanges = useTableSearchParams(router, {
@@ -254,11 +256,11 @@ const stateAndOnChanges = useTableSearchParams(router, {
 
 URLパラメータの値のエンコード形式はデフォルトでは、以下のような素朴な形式です。
 
-| stateの値        | URLパラメータの例           |
-| ---------------- | --------------------------- |
-| 行全体の検索     | `?globalFilter=John`        |
-| ソート           | `?sorting=name.desc`        |
-| ページネーション | `??pageIndex=2&pageSize=20` |
+| stateの値        | URLパラメータの例          |
+| ---------------- | -------------------------- |
+| 行全体の検索     | `?globalFilter=John`       |
+| ソート           | `?sorting=name.desc`       |
+| ページネーション | `?pageIndex=2&pageSize=20` |
 
 もしエンコード形式を変更したい場合は、`useTableSearchParams`の第2引数の`encoders`と`docoders`で指定できます。
 
@@ -360,6 +362,6 @@ const stateAndOnChanges = useTableSearchParams(router, {
 
 ちなみにプライベートで自分の作ったpackageをnpmに公開したのが初めてで、npmのpublishの方法や[tsup](https://tsup.egoist.dev/)の便利さなどを知れたのもよかったです。
 
-よかったらぜひ使ってみてください！（スターもいただけるととても喜びます）
+よかったら使ってみてください！（スターもいただけるととても喜びます！）
 
 https://github.com/taro-28/tanstack-table-search-params

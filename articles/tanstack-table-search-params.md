@@ -15,6 +15,8 @@ published: false
 
 今回は、ReactでTanStack Tableを使用する際に検索やソートなどの状態をURLパラメータに同期できる[tanstack-table-search-params](https://github.com/taro-28/tanstack-table-search-params)というライブラリを作ったのでその紹介です。
 
+https://github.com/taro-28/tanstack-table-search-params
+
 https://x.com/taroro_tarotaro/status/1814550036392653023
 
 # TanStack Table
@@ -216,7 +218,7 @@ https://github.com/TanStack/table/blob/main/packages/table-core/src/features/Row
 
 [URLパラメータに同期する仕組み](#URLパラメータに同期する仕組み)で紹介したように、tanstack-table-search-paramsはURLパラメータのReact stateをTanStack Tableのstateに変換しているだけなので、ReactのstateでURLパラメータを取得できるrouterであれば（たぶん）使用できます。
 
-以下の3つは、examplesディレクトリを用意しているのでよかったらご覧ください。
+以下の3つは、examplesを用意しているのでよかったらご覧ください。
 
 - [Next.js(Pages Router)](https://github.com/taro-28/tanstack-table-search-params/tree/main/examples/next-pages-router)
 - [Next.js(App Router)](https://github.com/taro-28/tanstack-table-search-params/tree/main/examples/next-app-router)
@@ -230,7 +232,7 @@ tanstack-table-search-paramsでは、URLパラメータ名やエンコード形�
 
 URLパラメータ名はデフォルトでは`globalFilter`、`sorting`のような`TableState`型と同じ名前が使われます。
 
-もしURLパラメータ名を変更したい場合は、`useTableSearchParams`の第2引数の`paramNames`で指定できます。
+URLパラメータ名を変更する場合は、`useTableSearchParams`の第2引数の`paramNames`で指定できます。
 
 ```tsx
 const stateAndOnChanges = useTableSearchParams(router, {
@@ -241,7 +243,7 @@ const stateAndOnChanges = useTableSearchParams(router, {
 });
 ```
 
-もしprefixやsuffixを追加する場合は、関数を渡すこともできます。
+prefixやsuffixを追加する場合は、関数を渡すこともできます。
 
 ```tsx
 const stateAndOnChanges = useTableSearchParams(router, {
@@ -262,7 +264,7 @@ URLパラメータの値のエンコード形式はデフォルトでは、以�
 | ソート           | `?sorting=name.desc`       |
 | ページネーション | `?pageIndex=2&pageSize=20` |
 
-もしエンコード形式を変更したい場合は、`useTableSearchParams`の第2引数の`encoders`と`docoders`で指定できます。
+エンコード形式を変更する場合は、`useTableSearchParams`の第2引数の`encoders`と`docoders`で指定できます。
 
 ```tsx
 const stateAndOnChanges = useTableSearchParams(router, {
